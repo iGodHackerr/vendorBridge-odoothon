@@ -1,0 +1,10 @@
+{
+  "name": "vendorbridge-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VendorBridge Procurement & Vendor Management ERP frontend prototype",
+  "scripts": {
+    "start": "npx --yes serve . -l tcp://0.0.0.0:5173",
+    "tunnel": "npx --yes localtunnel --port 5173"
+  }
+}

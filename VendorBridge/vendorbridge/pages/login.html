@@ -9,28 +9,49 @@
   <link rel="stylesheet" href="../css/auth.css">
 </head>
 <body class="auth-page" data-auth-page="login">
-  <section class="auth-shell">
-    <div class="auth-logo">VendorBridge</div>
-    <div class="auth-card" id="loginCard">
-      <h1>Welcome back</h1>
-      <p class="auth-subtitle">Sign in to manage procurement workflows.</p>
-      <div class="message" id="message"></div>
-      <form id="loginForm">
-        <div class="form-group"><label class="form-label" for="email">Email</label><input class="form-control" id="email" type="email" required></div>
-        <div class="form-group"><label class="form-label" for="password">Password</label><div class="password-row"><input class="form-control" id="password" type="password" required><button class="btn btn-outline" type="button" id="togglePassword">Show</button></div></div>
-        <button class="btn btn-primary" type="submit" style="width:100%">Login</button>
-      </form>
-      <div class="auth-links"><a href="#" id="forgotLink">Forgot Password?</a><a href="signup.html">Sign Up</a></div>
+  <section class="auth-shell auth-shell-wide">
+    <div class="auth-brand-panel">
+      <div class="auth-logo">VendorBridge</div>
+      <div class="bridge-graphic" aria-hidden="true">
+        <div class="graphic-card card-a"><span>RFQ</span><strong>24</strong></div>
+        <div class="graphic-card card-b"><span>PO</span><strong>18</strong></div>
+        <div class="graphic-card card-c"><span>GST</span><strong>OK</strong></div>
+        <div class="bridge-line line-one"></div>
+        <div class="bridge-line line-two"></div>
+        <div class="node node-one"></div>
+        <div class="node node-two"></div>
+        <div class="node node-three"></div>
+        <div class="auth-arc"></div>
+      </div>
+      <div class="auth-brand-copy">
+        <h2>Procurement, vendors, approvals, and invoices in one clean workspace.</h2>
+        <p>Track RFQs, compare quotations, approve purchases, and keep every action visible.</p>
+      </div>
     </div>
-    <div class="auth-card hidden" id="forgotCard">
-      <h1>Reset password</h1>
-      <p class="auth-subtitle">Enter your email to receive a reset link.</p>
-      <div class="message" id="forgotMessage"></div>
-      <form id="forgotForm">
-        <div class="form-group"><label class="form-label" for="forgotEmail">Email</label><input class="form-control" id="forgotEmail" type="email" required></div>
-        <button class="btn btn-primary" type="submit" style="width:100%">Send Reset Link</button>
-      </form>
-      <div class="auth-links"><a href="#" id="backLogin">Back to Login</a></div>
+    <div class="auth-form-panel">
+      <div class="auth-card" id="loginCard">
+        <div class="auth-card-top"><span class="auth-kicker">Secure access</span><span class="auth-mark">VB</span></div>
+        <h1>Welcome back</h1>
+        <p class="auth-subtitle">Sign in to manage procurement workflows.</p>
+        <div class="message" id="message"></div>
+        <form id="loginForm">
+          <div class="form-group"><label class="form-label" for="email">Email</label><input class="form-control" id="email" type="email" required></div>
+          <div class="form-group"><label class="form-label" for="password">Password</label><div class="password-row"><input class="form-control" id="password" type="password" required><button class="btn btn-outline" type="button" id="togglePassword">Show</button></div></div>
+          <button class="btn btn-primary auth-submit" type="submit">Login</button>
+        </form>
+        <div class="auth-links"><a href="#" id="forgotLink">Forgot Password?</a><a href="signup.html">Sign Up</a></div>
+      </div>
+      <div class="auth-card hidden" id="forgotCard">
+        <div class="auth-card-top"><span class="auth-kicker">Account recovery</span><span class="auth-mark">VB</span></div>
+        <h1>Reset password</h1>
+        <p class="auth-subtitle">Enter your email to receive a reset link.</p>
+        <div class="message" id="forgotMessage"></div>
+        <form id="forgotForm">
+          <div class="form-group"><label class="form-label" for="forgotEmail">Email</label><input class="form-control" id="forgotEmail" type="email" required></div>
+          <button class="btn btn-primary auth-submit" type="submit">Send Reset Link</button>
+        </form>
+        <div class="auth-links"><a href="#" id="backLogin">Back to Login</a></div>
+      </div>
     </div>
   </section>
   <script src="../js/services/storage.service.js"></script>

@@ -9,21 +9,41 @@
   <link rel="stylesheet" href="../css/auth.css">
 </head>
 <body class="auth-page" data-auth-page="signup">
-  <section class="auth-shell">
-    <div class="auth-logo">VendorBridge</div>
-    <div class="auth-card">
-      <h1>Create account</h1>
-      <p class="auth-subtitle">Join VendorBridge with your procurement role.</p>
-      <div class="message" id="message"></div>
-      <form id="signupForm">
-        <div class="form-group"><label class="form-label" for="name">Full Name</label><input class="form-control" id="name" required></div>
-        <div class="form-group"><label class="form-label" for="email">Email</label><input class="form-control" id="email" type="email" required></div>
-        <div class="form-group"><label class="form-label" for="password">Password</label><input class="form-control" id="password" type="password" required></div>
-        <div class="form-group"><label class="form-label" for="confirmPassword">Confirm Password</label><input class="form-control" id="confirmPassword" type="password" required></div>
-        <div class="form-group"><label class="form-label" for="role">Role</label><select class="form-control" id="role" required><option>Procurement Officer</option><option>Vendor</option><option>Manager</option><option>Admin</option></select></div>
-        <button class="btn btn-primary" type="submit" style="width:100%">Sign Up</button>
-      </form>
-      <div class="auth-links"><a href="login.html">Back to Login</a></div>
+  <section class="auth-shell auth-shell-wide">
+    <div class="auth-brand-panel">
+      <div class="auth-logo">VendorBridge</div>
+      <div class="bridge-graphic signup-graphic" aria-hidden="true">
+        <div class="graphic-card card-a"><span>RFQ</span><strong>New</strong></div>
+        <div class="graphic-card card-b"><span>Quote</span><strong>3</strong></div>
+        <div class="graphic-card card-c"><span>Paid</span><strong>Rs</strong></div>
+        <div class="bridge-line line-one"></div>
+        <div class="bridge-line line-two"></div>
+        <div class="node node-one"></div>
+        <div class="node node-two"></div>
+        <div class="node node-three"></div>
+        <div class="auth-arc"></div>
+      </div>
+      <div class="auth-brand-copy">
+        <h2>Create your role-based procurement workspace.</h2>
+        <p>Officers, vendors, managers, and admins each get focused access to the right flow.</p>
+      </div>
+    </div>
+    <div class="auth-form-panel">
+      <div class="auth-card">
+        <div class="auth-card-top"><span class="auth-kicker">New workspace access</span><span class="auth-mark">VB</span></div>
+        <h1>Create account</h1>
+        <p class="auth-subtitle">Join VendorBridge with your procurement role.</p>
+        <div class="message" id="message"></div>
+        <form id="signupForm">
+          <div class="form-group"><label class="form-label" for="name">Full Name</label><input class="form-control" id="name" required></div>
+          <div class="form-group"><label class="form-label" for="email">Email</label><input class="form-control" id="email" type="email" required></div>
+          <div class="form-group"><label class="form-label" for="password">Password</label><input class="form-control" id="password" type="password" required></div>
+          <div class="form-group"><label class="form-label" for="confirmPassword">Confirm Password</label><input class="form-control" id="confirmPassword" type="password" required></div>
+          <div class="form-group"><label class="form-label" for="role">Role</label><select class="form-control" id="role" required><option>Procurement Officer</option><option>Vendor</option><option>Manager</option><option>Admin</option></select></div>
+          <button class="btn btn-primary auth-submit" type="submit">Sign Up</button>
+        </form>
+        <div class="auth-links"><a href="login.html">Back to Login</a></div>
+      </div>
     </div>
   </section>
   <script src="../js/services/storage.service.js"></script>
