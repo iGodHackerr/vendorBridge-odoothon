@@ -249,3 +249,29 @@
     backdrop-filter:blur(16px);
     border-bottom:1px solid var(--border);
 }
+
+.sidebar{
+    background:
+        linear-gradient(
+            180deg,
+            #0f172a,
+            #111827,
+            #1e293b
+        );
+}
+
+.nav-link{
+    border-radius:14px;
+}
+
+.nav-link:hover{
+    background:rgba(255,255,255,.1);
+}
+
+.nav-link.active{
+    background:linear-gradient(
+        90deg,
+        rgba(37,99,235,.35),
+        transparent
+    );
+}
