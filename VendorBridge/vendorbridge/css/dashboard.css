@@ -151,3 +151,99 @@
 .grid-3{
     gap:22px;
 }
+/* ===== NEW DASHBOARD DESIGN ===== */
+
+.dashboard-hero{
+    margin-bottom:24px;
+}
+
+.welcome-card{
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color:white;
+
+    border-radius:28px;
+
+    padding:32px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 20px 40px rgba(37,99,235,.25);
+}
+
+.hero-badge{
+    background:rgba(255,255,255,.2);
+    padding:10px 20px;
+    border-radius:999px;
+}
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:24px;
+}
+
+.analytics-card{
+    min-height:420px;
+}
+
+.profile-card{
+    text-align:center;
+}
+
+.profile-avatar{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+
+    margin:auto;
+
+    background:linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:34px;
+    font-weight:900;
+}
+
+.profile-stats{
+    margin-top:24px;
+    display:flex;
+    justify-content:space-around;
+}
+
+.profile-stats strong{
+    display:block;
+    font-size:24px;
+}
+
+.stat-card.blue{
+    background:linear-gradient(
+      135deg,
+      #2563eb,
+      #06b6d4
+    );
+    color:white;
+}
+
+@media(max-width:900px){
+
+.dashboard-grid{
+    grid-template-columns:1fr;
+}
+
+}

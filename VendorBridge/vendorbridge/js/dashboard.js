@@ -1,32 +1,144 @@
 document.addEventListener('DOMContentLoaded', () => {
   renderLayout('Dashboard');
+
   const user = VB.currentUser();
   const root = document.getElementById('dashboardRoot');
+
   const stats = {
     pending: ApprovalService.getPending().length,
     rfqs: RFQService.getAll().filter(r => r.status === 'Open').length,
     pos: POService.getAll().length,
     invoices: InvoiceService.getAll().length
   };
-  const quick = {
-    'Procurement Officer': [['Create RFQ','rfq.html'],['View Vendors','vendors.html'],['Go to Approvals','comparison.html']],
-    'Vendor': [['View Assigned RFQs','rfq.html'],['Submit Quotation','quotations.html']],
-    'Manager': [['Go to Approvals','approvals.html'],['View Reports','reports.html']],
-    'Admin': [['Manage Vendors','vendors.html'],['View Reports','reports.html']]
-  }[user.role] || [];
+
   root.innerHTML = `
-    <section class="grid-4">
+  
+  <section class="dashboard-hero">
+
+      <div class="welcome-card">
+          <div>
+              <h1>Welcome Back 👋</h1>
+              <p>Manage vendors, RFQs, quotations and procurement workflow.</p>
+          </div>
+
+          <div class="hero-badge">
+              ${user.role}
+          </div>
+      </div>
+
+  </section>
+
+  <section class="grid-4">
+
       ${stat('Pending Approvals', stats.pending, 'orange', '✅')}
-      ${stat('Active RFQs', stats.rfqs, '', '📄')}
-      ${stat('Total Purchase Orders', stats.pos, 'green', '📦')}
-      ${stat('Total Invoices', stats.invoices, 'purple', '🧾')}
-    </section>
-    <section class="card"><h2>Quick Actions</h2><div class="quick-actions">${quick.map(q => `<a class="btn btn-primary" href="${q[1]}">${q[0]}</a>`).join('')}</div></section>
-    <section><h2>Recent Activity</h2><div class="table-wrapper"><table><thead><tr><th>Timestamp</th><th>User</th><th>Action</th><th>Module</th></tr></thead><tbody>${LogService.getRecent(5).map(l => `<tr><td>${VB.dateTime(l.timestamp)}</td><td>${l.userName}</td><td>${l.action}</td><td>${l.module}</td></tr>`).join('')}</tbody></table></div></section>
-    <section class="card"><h2>Monthly Procurement Spend</h2><div class="bar-chart">${monthlyBars()}</div></section>`;
+      ${stat('Active RFQs', stats.rfqs, 'blue', '📄')}
+      ${stat('Purchase Orders', stats.pos, 'green', '📦')}
+      ${stat('Invoices', stats.invoices, 'purple', '🧾')}
+
+  </section>
+
+  <section class="dashboard-grid">
+
+      <div class="card analytics-card">
+
+          <h2>Procurement Analytics</h2>
+
+          <div class="bar-chart">
+              ${monthlyBars()}
+          </div>
+
+      </div>
+
+      <div class="card profile-card">
+
+          <div class="profile-avatar">
+              ${user.name?.charAt(0) || 'U'}
+          </div>
+
+          <h3>${user.name}</h3>
+
+          <p>${user.role}</p>
+
+          <div class="profile-stats">
+
+              <div>
+                  <strong>${stats.rfqs}</strong>
+                  <span>RFQs</span>
+              </div>
+
+              <div>
+                  <strong>${stats.pos}</strong>
+                  <span>POs</span>
+              </div>
+
+          </div>
+
+      </div>
+
+  </section>
+
+  <section class="card">
+
+      <h2>Recent Activity</h2>
+
+      <div class="table-wrapper">
+
+      <table>
+
+      <thead>
+      <tr>
+      <th>Time</th>
+      <th>User</th>
+      <th>Action</th>
+      <th>Module</th>
+      </tr>
+      </thead>
+
+      <tbody>
+
+      ${LogService.getRecent(6).map(l => `
+      <tr>
+      <td>${VB.dateTime(l.timestamp)}</td>
+      <td>${l.userName}</td>
+      <td>${l.action}</td>
+      <td>${l.module}</td>
+      </tr>
+      `).join('')}
+
+      </tbody>
+
+      </table>
+
+      </div>
+
+  </section>
+
+  `;
 });
-function stat(label, value, cls, icon) { return `<div class="card stat-card ${cls}"><div><div class="muted">${label}</div><div class="stat-number">${value}</div></div><div class="stat-icon">${icon}</div></div>`; }
-function monthlyBars() {
-  const months = ['Jan','Feb','Mar','Apr','May','Jun']; const pos = POService.getAll(); const max = Math.max(1, ...pos.map(p => p.grandTotal));
-  return months.map((m, i) => { const total = pos[i % Math.max(pos.length,1)]?.grandTotal || (i + 1) * 30000; return `<div class="bar" style="height:${40 + (total / max) * 150}px"><span>${m}</span></div>`; }).join('');
+
+function stat(label,value,cls,icon){
+  return `
+    <div class="stat-card ${cls}">
+        <div>
+            <div>${label}</div>
+            <div class="stat-number">${value}</div>
+        </div>
+
+        <div class="stat-icon">
+            ${icon}
+        </div>
+    </div>
+  `;
+}
+
+function monthlyBars(){
+
+  const months=['Jan','Feb','Mar','Apr','May','Jun'];
+
+  return months.map((m,i)=>`
+    <div class="bar" style="height:${80+i*25}px">
+      <span>${m}</span>
+    </div>
+  `).join('');
+
 }
