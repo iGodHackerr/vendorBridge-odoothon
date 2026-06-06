@@ -1,1 +1,4 @@
-.vendor-status-row { display: flex; gap: 16px; }
+.vendor-status-row {
+    display: flex;
+    gap: 16px;
+}

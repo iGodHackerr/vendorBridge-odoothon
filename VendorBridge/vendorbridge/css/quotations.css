@@ -1,1 +1,5 @@
-.calc-total { font-size: 20px; font-weight: 800; color: var(--primary-dark); }
+.calc-total {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary-dark);
+}

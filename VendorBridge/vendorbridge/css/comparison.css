@@ -1,3 +1,11 @@
-.row-lowest { background: #f0fff4 !important; }
-.row-fastest { background: #ebf8ff !important; }
-.row-both { background: #faf5ff !important; }
+.row-lowest {
+    background: #f0fff4 !important;
+}
+
+.row-fastest {
+    background: #ebf8ff !important;
+}
+
+.row-both {
+    background: #faf5ff !important;
+}
