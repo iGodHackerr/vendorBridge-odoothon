@@ -327,3 +327,50 @@ tbody tr:hover {
     min-width: 0;
   }
 }
+
+
+.btn{
+    border-radius:12px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-primary{
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+}
+
+.card{
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.table-wrapper{
+    border-radius:18px;
+    overflow:hidden;
+}
+
+thead th{
+    background:#f8fafc;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+tbody tr:hover{
+    background:#eff6ff;
+}
+
+.form-control{
+    border-radius:12px;
+}
+
+.form-control:focus{
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+}

@@ -214,3 +214,38 @@
     width: auto;
   }
 }
+
+.sidebar{
+    background:linear-gradient(
+        180deg,
+        #0f172a,
+        #111827,
+        #1e293b
+    );
+}
+
+.sidebar-logo{
+    font-size:22px;
+    font-weight:800;
+}
+
+.nav-link{
+    margin:5px 10px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    transform:translateX(6px);
+}
+
+.nav-link.active{
+    background:rgba(255,255,255,.1);
+    border-left:4px solid var(--primary);
+}
+
+.app-header{
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--border);
+}

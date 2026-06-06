@@ -37,3 +37,18 @@
     font-size: 12px;
     white-space: nowrap;
 }
+
+
+.hbar{
+    height:30px;
+    border-radius:999px;
+}
+
+.hbar-fill{
+    background:
+      linear-gradient(
+        90deg,
+        #10b981,
+        #2563eb
+      );
+}
