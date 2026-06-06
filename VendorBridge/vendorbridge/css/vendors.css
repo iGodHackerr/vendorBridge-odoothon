@@ -2,3 +2,10 @@
     display: flex;
     gap: 16px;
 }
+
+
+.vendor-status-row{
+    background:#f8fafc;
+    padding:14px;
+    border-radius:14px;
+}
