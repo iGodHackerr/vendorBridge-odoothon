@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | VendorBridge</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body class="auth-page" data-auth-page="login">
+  <section class="auth-shell">
+    <div class="auth-logo">VendorBridge</div>
+    <div class="auth-card" id="loginCard">
+      <h1>Welcome back</h1>
+      <p class="auth-subtitle">Sign in to manage procurement workflows.</p>
+      <div class="message" id="message"></div>
+      <form id="loginForm">
+        <div class="form-group"><label class="form-label" for="email">Email</label><input class="form-control" id="email" type="email" required></div>
+        <div class="form-group"><label class="form-label" for="password">Password</label><div class="password-row"><input class="form-control" id="password" type="password" required><button class="btn btn-outline" type="button" id="togglePassword">Show</button></div></div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Login</button>
+      </form>
+      <div class="auth-links"><a href="#" id="forgotLink">Forgot Password?</a><a href="signup.html">Sign Up</a></div>
+    </div>
+    <div class="auth-card hidden" id="forgotCard">
+      <h1>Reset password</h1>
+      <p class="auth-subtitle">Enter your email to receive a reset link.</p>
+      <div class="message" id="forgotMessage"></div>
+      <form id="forgotForm">
+        <div class="form-group"><label class="form-label" for="forgotEmail">Email</label><input class="form-control" id="forgotEmail" type="email" required></div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Send Reset Link</button>
+      </form>
+      <div class="auth-links"><a href="#" id="backLogin">Back to Login</a></div>
+    </div>
+  </section>
+  <script src="../js/services/storage.service.js"></script>
+  <script src="../js/services/log.service.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+.invoice-total { background: #eaf2ff; padding: 10px; border-radius: 6px; font-weight: 800; }
+@media print { body * { visibility: hidden; } .modal-overlay.open, .modal-overlay.open * { visibility: visible; } .modal-overlay.open { position: absolute; inset: 0; display: block; background: #fff; } .modal-footer, .modal-close, .invoice-actions { display: none !important; } }

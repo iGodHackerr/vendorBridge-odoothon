@@ -1,0 +1,13 @@
+.auth-page { min-height: 100vh; display: grid; place-items: center; padding: 24px; background: linear-gradient(135deg, #1a73e8, #1557b0); }
+.auth-shell { width: min(420px, 100%); }
+.auth-logo { color: #fff; font-size: 30px; font-weight: 800; text-align: center; margin-bottom: 22px; }
+.auth-card { background: #fff; border-radius: 16px; box-shadow: 0 18px 50px rgba(0,0,0,.26); padding: 28px; }
+.auth-card h1 { margin: 0 0 6px; font-size: 24px; }
+.auth-subtitle { color: var(--text-secondary); margin: 0 0 22px; }
+.password-row { display: flex; gap: 8px; }
+.password-row .form-control { flex: 1; }
+.auth-links { display: flex; justify-content: space-between; gap: 12px; margin-top: 16px; font-size: 14px; color: var(--primary); }
+.message { margin-bottom: 14px; padding: 10px; border-radius: 6px; display: none; }
+.message.show { display: block; }
+.message.error { background: #fff5f5; color: #c53030; }
+.message.success { background: #f0fff4; color: #2f855a; }
