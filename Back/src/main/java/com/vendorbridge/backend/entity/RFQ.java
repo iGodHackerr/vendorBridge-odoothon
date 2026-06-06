@@ -1,5 +1,7 @@
+
 package com.vendorbridge.backend.entity;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -11,25 +13,24 @@ import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "vendors")
-public class Vendor {
+@Table(name = "rfqs")
+public class RFQ {
 
     @Id
     private String id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "rfq_number")
+    private String rfqNumber;
 
-    private String email;
+    private String product;
 
-    private String phone;
+    private Integer quantity;
 
-    @Column(name = "gst")
-    private String gst;
+    private String unit;
 
-    private String address;
+    private String description;
 
-    private String category;
+    private LocalDate deadline;
 
     private String status;
 
@@ -49,7 +50,11 @@ public class Vendor {
         this.updatedAt = LocalDateTime.now();
 
         if (this.status == null) {
-            this.status = "Active";
+            this.status = "Open";
+        }
+
+        if (this.rfqNumber == null) {
+            this.rfqNumber = "RFQ-" + System.currentTimeMillis();
         }
     }
 
@@ -58,7 +63,7 @@ public class Vendor {
         this.updatedAt = LocalDateTime.now();
     }
 
-    public Vendor() {
+    public RFQ() {
     }
 
     // GETTERS & SETTERS
@@ -67,52 +72,52 @@ public class Vendor {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getRfqNumber() {
+        return rfqNumber;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRfqNumber(String rfqNumber) {
+        this.rfqNumber = rfqNumber;
     }
 
-    public String getEmail() {
-        return email;
+    public String getProduct() {
+        return product;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setProduct(String product) {
+        this.product = product;
     }
 
-    public String getPhone() {
-        return phone;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
-    public String getGst() {
-        return gst;
+    public String getUnit() {
+        return unit;
     }
 
-    public void setGst(String gst) {
-        this.gst = gst;
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 
-    public String getAddress() {
-        return address;
+    public String getDescription() {
+        return description;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getCategory() {
-        return category;
+    public LocalDate getDeadline() {
+        return deadline;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setDeadline(LocalDate deadline) {
+        this.deadline = deadline;
     }
 
     public String getStatus() {

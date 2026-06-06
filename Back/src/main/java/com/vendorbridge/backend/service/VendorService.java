@@ -47,13 +47,13 @@ public class VendorService {
             return null;
         }
 
-        existingVendor.setCompanyName(updatedVendor.getCompanyName());
-        existingVendor.setGstNumber(updatedVendor.getGstNumber());
-        existingVendor.setCategory(updatedVendor.getCategory());
-        existingVendor.setContactPerson(updatedVendor.getContactPerson());
-        existingVendor.setEmail(updatedVendor.getEmail());
-        existingVendor.setPhone(updatedVendor.getPhone());
-        existingVendor.setStatus(updatedVendor.getStatus());
+        existingVendor.setName(updatedVendor.getName());
+    existingVendor.setGst(updatedVendor.getGst());
+    existingVendor.setCategory(updatedVendor.getCategory());
+    existingVendor.setEmail(updatedVendor.getEmail());
+    existingVendor.setPhone(updatedVendor.getPhone());
+    existingVendor.setAddress(updatedVendor.getAddress());
+    existingVendor.setStatus(updatedVendor.getStatus());
 
         return vendorRepository.save(existingVendor);
     }
