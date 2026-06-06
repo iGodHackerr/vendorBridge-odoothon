@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | VendorBridge</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body class="auth-page" data-auth-page="signup">
+  <section class="auth-shell">
+    <div class="auth-logo">VendorBridge</div>
+    <div class="auth-card">
+      <h1>Create account</h1>
+      <p class="auth-subtitle">Join VendorBridge with your procurement role.</p>
+      <div class="message" id="message"></div>
+      <form id="signupForm">
+        <div class="form-group"><label class="form-label" for="name">Full Name</label><input class="form-control" id="name" required></div>
+        <div class="form-group"><label class="form-label" for="email">Email</label><input class="form-control" id="email" type="email" required></div>
+        <div class="form-group"><label class="form-label" for="password">Password</label><input class="form-control" id="password" type="password" required></div>
+        <div class="form-group"><label class="form-label" for="confirmPassword">Confirm Password</label><input class="form-control" id="confirmPassword" type="password" required></div>
+        <div class="form-group"><label class="form-label" for="role">Role</label><select class="form-control" id="role" required><option>Procurement Officer</option><option>Vendor</option><option>Manager</option><option>Admin</option></select></div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Sign Up</button>
+      </form>
+      <div class="auth-links"><a href="login.html">Back to Login</a></div>
+    </div>
+  </section>
+  <script src="../js/services/storage.service.js"></script>
+  <script src="../js/services/log.service.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>
